@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b6b53">
+<meta name="description" content="منصة مجانية للتحضير لمباراة التعليم بالمغرب لجميع الأسلاك والتخصصات">
+<link rel="manifest" href="manifest.json">
+<title>مباراة التعليم | منصة التحضير</title>
+<style>
+:root{--green:#0b6b53;--green2:#e8f5ef;--ink:#17312b;--muted:#687a75;--bg:#f5f8f6;--line:#dce8e2;--gold:#f1b84b}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}button,input,select{font:inherit}button{cursor:pointer}
+header{background:linear-gradient(120deg,#075844,#11866a);color:white;padding:18px max(18px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:10px}.logo{background:#fff;color:var(--green);border-radius:12px;padding:5px 10px;font-size:1.3rem}
+nav{display:flex;gap:8px;flex-wrap:wrap}nav button{border:1px solid #ffffff55;background:#ffffff12;color:white;border-radius:9px;padding:7px 12px}
+main{max-width:1120px;margin:auto;padding:24px 18px 50px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:stretch}
+.hero-copy,.hero-card,.panel,.stat,.resource-card,.quiz-card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 5px 18px #12352a08}
+.hero-copy{background:linear-gradient(140deg,#fff,#edf8f2);padding:30px}.eyebrow{color:var(--green);font-weight:bold}.hero h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.25;margin:10px 0}.hero p{color:var(--muted);max-width:650px}.primary{background:var(--green);color:white;border:0;border-radius:10px;padding:11px 17px;font-weight:bold}.secondary{background:var(--green2);color:var(--green);border:1px solid #b6dfce;border-radius:10px;padding:10px 14px;font-weight:bold}.hero-card{display:flex;flex-direction:column;justify-content:center;background:var(--green);color:white}.hero-card .big{font-size:2.4rem;font-weight:800}.hero-card small{color:#d7f1e6}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 28px}.stat strong{display:block;font-size:1.4rem;color:var(--green)}.stat span{color:var(--muted);font-size:.9rem}
+section{margin-top:30px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:14px}.section-head h2{margin:0;font-size:1.45rem}.section-head p{margin:2px 0 0;color:var(--muted)}
+.filters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:white;padding:16px;border:1px solid var(--line);border-radius:16px}.field label{display:block;font-weight:bold;font-size:.9rem;margin-bottom:5px}.field select,.field input{width:100%;padding:10px;border:1px solid #cbdad2;border-radius:9px;background:white;color:var(--ink)}
+.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.resource-card h3{margin:7px 0}.resource-card p{color:var(--muted);margin:0 0 12px;font-size:.94rem}.tag{display:inline-block;background:var(--green2);color:var(--green);padding:3px 9px;border-radius:30px;font-size:.78rem;font-weight:bold}.resource-card button{margin-top:8px}.empty{background:white;border:1px dashed #a9c9ba;border-radius:14px;padding:24px;text-align:center;color:var(--muted);grid-column:1/-1}
+.quiz-layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.quiz-card h3{margin-top:0}.answer{display:block;width:100%;text-align:right;border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 12px;margin:8px 0}.answer:hover{border-color:var(--green)}.answer.correct{background:#e2f7e9;border-color:#5ca878}.answer.wrong{background:#fff0ec;border-color:#d98b7a}.notice{border-right:4px solid var(--gold);background:#fff9e9;padding:12px 14px;border-radius:8px;color:#72541b;font-size:.9rem}
+footer{margin-top:36px;padding:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;text-align:center}
+.modal{position:fixed;inset:0;background:#10251fd9;display:none;align-items:center;justify-content:center;padding:18px;z-index:5}.modal.open{display:flex}.modal-box{background:white;border-radius:18px;padding:24px;max-width:650px;width:100%;max-height:85vh;overflow:auto}.close{float:left;border:0;background:#eef4f0;border-radius:8px;padding:4px 10px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.filters,.resource-grid,.quiz-layout{grid-template-columns:1fr}.hero-card{min-height:150px}header{align-items:flex-start}}
+.source-link{display:inline-block;margin-top:10px;color:#075844;font-weight:700;text-decoration:underline}.notice{background:#fff8e7;border:1px solid #f1dfb1;padding:12px;border-radius:12px}.section{padding:28px max(18px,calc((100vw - 1120px)/2))}.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.resource-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}.resource-card h3{margin:8px 0}.resource-card p{margin:0;color:var(--muted)}.tag{font-size:.8rem;background:var(--green2);padding:3px 8px;border-radius:99px;display:inline-block}</style>
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">م</span><span>مباراة التعليم <small style="display:block;font-size:.72rem;font-weight:400;color:#d8f1e7">منصة مجانية للتحضير</small></span></div>
+  <nav aria-label="القائمة"><button onclick="goTo('library')">المكتبة</button><button onclick="goTo('online-library')">الامتحانات والملخصات</button><button onclick="goTo('quiz')">اختبر نفسك</button><button onclick="goTo('plan')">خطة المراجعة</button></nav>
+</header>
+<main>
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">تعلم. تدرب. استعد بثقة.</div>
+      <h1>استعد لمباراة التعليم<br>خطوة بخطوة</h1>
+      <p>فضاء مجاني يجمع موارد التحضير حسب السلك والتخصص، مع ملخصات واختبارات وخطة مراجعة. هذه نسخة أولية قابلة للتوسيع وإضافة الوثائق الموثوقة.</p>
+      <button class="primary" onclick="goTo('library')">اكتشف مكتبة الموارد ←</button>
+      <button class="secondary" onclick="goTo('quiz')">ابدأ اختباراً قصيراً</button>
+    </div>
+    <div class="hero-card"><span>ابدأ من هنا</span><div class="big">100% مجاني</div><small>لجميع المترشحين والأسلاك والتخصصات</small><hr style="width:100%;border:0;border-top:1px solid #ffffff44;margin:18px 0"><div>📚 موارد مصنفة</div><div>📝 تدريب تفاعلي</div><div>🎯 خطة مراجعة</div></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>3 أسلاك</strong><span>ابتدائي، إعدادي، تأهيلي</span></div>
+    <div class="stat"><strong>مواد مشتركة</strong><span>علوم التربية والمستجدات</span></div>
+    <div class="stat"><strong>مجاني</strong><span>لا اشتراك ولا أداء</span></div>
+  </div>
+
+  <section id="library">
+    <div class="section-head"><div><h2>📚 مكتبة الموارد</h2><p>اختر السلك والتخصص ونوع المورد.</p></div></div>
+    <div class="filters">
+      <div class="field"><label for="cycle">السلك</label><select id="cycle"><option value="all">جميع الأسلاك</option><option>التعليم الابتدائي</option><option>الثانوي الإعدادي</option><option>الثانوي التأهيلي</option><option>موارد مشتركة</option></select></div>
+      <div class="field"><label for="subject">التخصص / المادة</label><select id="subject"><option value="all">جميع التخصصات</option><option>علوم التربية</option><option>ديداكتيك اللغة العربية</option><option>ديداكتيك اللغة الفرنسية</option><option>الرياضيات</option><option>اللغة العربية</option><option>اللغة الفرنسية</option><option>اللغة الإنجليزية</option><option>علوم الحياة والأرض</option><option>الفيزياء والكيمياء</option><option>الاجتماعيات</option><option>التشريع التربوي</option></select></div>
+      <div class="field"><label for="kind">نوع المورد</label><select id="kind"><option value="all">الكل</option><option>ملخص</option><option>اختبار تفاعلي</option><option>منهجية</option><option>دليل التحضير</option></select></div>
+    </div>
+    <div class="resource-grid" id="resources" style="margin-top:14px"></div>
+    <p class="notice" style="margin-top:14px">تنبيه: موارد هذه النسخة الأولية هي مواد تمهيدية للتدريب. لا تُعرض أي وثيقة على أنها امتحان رسمي أو تصحيح رسمي ما لم يُتحقق من مصدرها.</p>
+  </section>
+
+  
+<section id="online-library" class="section">
+  <div class="section-head"><div><h2>مكتبة الامتحانات والملخصات على الإنترنت</h2><p>روابط مجمّعة للمراجعة والتنزيل من مواقع أصحابها. تحقق من الدورة والتخصص، وميّز دائماً بين التصحيح الرسمي والمقترح.</p></div></div>
+  <div class="resource-grid">
+    <article class="resource-card"><span class="tag">مصدر رسمي</span><h3>مواضيع مباراة التعليم 2025</h3><p>مواضيع ووثائق حسب السلك والتخصص، منشورة في موقع وزارة التربية الوطنية.</p><a class="source-link" href="https://www.men.gov.ma/" target="_blank" rel="noopener">فتح موقع الوزارة ↗</a></article>
+    <article class="resource-card"><span class="tag">امتحانات سابقة</span><h3>أرشيف الامتحانات 2022–2025</h3><p>تجميعة مواضيع حسب السنوات والتخصصات، مع صفحات للتحميل والتدرب.</p><a class="source-link" href="https://www.mohaki.tech/exam/archive" target="_blank" rel="noopener">فتح أرشيف الامتحانات ↗</a></article>
+    <article class="resource-card"><span class="tag">توصيفات وامتحانات</span><h3>التحضير لمباراة التعليم</h3><p>صفحة تجمع توصيفات التخصصات وامتحانات سابقة وملفات PDF.</p><a class="source-link" href="https://www.mohaki.tech/preparation-2026" target="_blank" rel="noopener">فتح مكتبة التحضير ↗</a></article>
+    <article class="resource-card"><span class="tag">ملخصات تربوية</span><h3>ملخصات علوم التربية والديداكتيك</h3><p>موارد عن نظريات التعلم والمقاربات البيداغوجية والتقويم والدعم.</p><a class="source-link" href="https://doc.ostad.ma/ملخصات" target="_blank" rel="noopener">فتح ملخصات Ostadoc ↗</a></article>
+    <article class="resource-card"><span class="tag">ملخص تربوي</span><h3>الملخص المفيد في علوم التربية والديداكتيك</h3><p>ملخص تمهيدي يتناول نظريات التعلم والمقاربات وبعض مرجعيات التربية والتكوين.</p><a class="source-link" href="https://doc.ostad.ma/الملخص-المفيد-في-علوم-التربية-والديدا.html" target="_blank" rel="noopener">فتح صفحة الملخص ↗</a></article>
+    <article class="resource-card"><span class="tag">مراجعة تفاعلية</span><h3>المواضيع التربوية وQCM</h3><p>مراجعة مفاهيم علوم التربية والديداكتيك والمستجدات التربوية مع أسئلة تفاعلية.</p><a class="source-link" href="https://crmef.ma/topics/" target="_blank" rel="noopener">فتح المواضيع والاختبارات ↗</a></article>
+    <article class="resource-card"><span class="tag">اختبارات تجريبية</span><h3>تدرب حسب التخصص</h3><p>أسئلة تدريبية للمحاور المشتركة وتخصصات التعليم الابتدائي.</p><a class="source-link" href="https://concours.ijob.ma/concours/enseignement/" target="_blank" rel="noopener">فتح الاختبارات ↗</a></article>
+    <article class="resource-card"><span class="tag">ملخصات إضافية</span><h3>علوم التربية للاستعداد للمباريات</h3><p>محاور مثل أخلاقيات المهنة، الحياة المدرسية، المقاربة بالكفايات والديداكتيك.</p><a class="source-link" href="https://www.tarbiawataalim.com/2021/11/resumes-sciences-education.html" target="_blank" rel="noopener">فتح الموارد ↗</a></article>
+  </div>
+  <p class="notice">هذه المكتبة فهرس روابط وليست نسخة محمّلة بالكامل من كل ملفات الإنترنت. أُبقيت الملفات على مواقع ناشريها احتراماً لحقوق النشر، ولأن بعض الروابط أو التصحيحات قد تتغير. لتحميل PDF، افتح المصدر واضغط على رابط التنزيل الموجود فيه.</p>
+</section>
+
+<section id="quiz">
+    <div class="section-head"><div><h2>🧠 اختبر نفسك</h2><p>أسئلة تجريبية قصيرة مع تصحيح فوري.</p></div></div>
+    <div class="quiz-layout" id="quizArea"></div>
+  </section>
+
+  <section id="plan">
+    <div class="section-head"><div><h2>🎯 خطة مراجعة أسبوعية</h2><p>علّم على ما أنجزته؛ يتم حفظ التقدم على هذا الجهاز.</p></div></div>
+    <div class="panel" id="planItems"></div>
+  </section>
+  <footer>منصة مجانية مستقلة للتحضير لمباراة التعليم بالمغرب. يجب مطابقة التخصصات النهائية مع إعلان المباراة الرسمي لكل دورة.</footer>
+</main>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="close" onclick="closeModal()">إغلاق ✕</button><div id="modalContent"></div></div></div>
+<script src="app.js"></script>
+</body></html>

@@ -1,0 +1,11 @@
+{
+  "name": "مباراة التعليم - منصة التحضير",
+  "short_name": "مباراة التعليم",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f8f6",
+  "theme_color": "#0b6b53",
+  "description": "منصة مجانية للتحضير لمباراة التعليم بالمغرب"
+}
